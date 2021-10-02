@@ -18,7 +18,6 @@ import Permit from "./Permit";
 import { useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
 
-
 import { apiKey } from "./firebase";
 
 function App() {
@@ -41,7 +40,7 @@ function App() {
           <Route path="/" exact component={PostList} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" exact component={Signup} />
-          <Route path="/write" exact component={PostWrite} />
+          <Route path="/write" exact component={PostWrite}/>
           <Route path="/post/:id" exact component={PostDetail}/>
         </ConnectedRouter>
       </Grid>

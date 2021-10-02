@@ -5,11 +5,11 @@ const Grid = (props) => {
   const { is_flex, width, margin, padding, bg, children } = props;
 
   const styles = {
-    is_flex: is_flex,
-    width: width,
-    margin: margin,
-    padding: padding,
-    bg: bg,
+      is_flex: is_flex,
+      width: width,
+      margin: margin,
+      padding: padding,
+      bg: bg,
   };
   return (
     <React.Fragment>
@@ -19,7 +19,7 @@ const Grid = (props) => {
 };
 
 Grid.defaultProps = {
-  children: null,
+  chidren: null,
   is_flex: false,
   width: "100%",
   padding: false,
@@ -36,7 +36,7 @@ const GridBox = styled.div`
   ${(props) => (props.bg ? `background-color: ${props.bg};` : "")}
   ${(props) =>
     props.is_flex
-      ? `display: flex; align-items: center; justify-content: space-between`
+      ? `display: flex; align-items: center; justify-content: space-between; `
       : ""}
 `;
 

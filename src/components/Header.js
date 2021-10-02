@@ -7,17 +7,16 @@ import { actionCreators as userActions } from "../redux/modules/user";
 
 import { history } from "../redux/configureStore";
 import { apiKey } from "../shared/firebase";
-import Permit from "../shared/Permit";
 
 const Header = (props) => {
   const dispatch = useDispatch();
   const is_login = useSelector((state) => state.user.is_login);
 
-  const _sesssion_key = `firebase:authUser:${apiKey}:[DEFAULT]`;
+  const _session_key = `firebase:authUser:${apiKey}:[DEFAULT]`;
 
-  const is_session = sessionStorage.getItem(_sesssion_key) ? true : false;
-
-  console.log(_sesssion_key);
+  const is_session = sessionStorage.getItem(_session_key)? true : false;
+  
+  console.log(is_session);
 
   if (is_login && is_session) {
     return (
@@ -30,7 +29,7 @@ const Header = (props) => {
           </Grid>
 
           <Grid is_flex>
-            <Button text="내 정보"></Button>
+            <Button text="내정보"></Button>
             <Button text="알림"></Button>
             <Button
               text="로그아웃"

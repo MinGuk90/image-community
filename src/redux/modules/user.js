@@ -4,7 +4,7 @@ import { produce } from "immer";
 import { setCookie, getCookie, deleteCookie } from "../../shared/Cookie";
 
 import { auth } from "../../shared/firebase";
-import firebase from "firebase/compat/app";
+import firebase from "firebase/app";
 
 // actions
 const LOG_OUT = "LOG_OUT";
@@ -92,9 +92,9 @@ const signupFB = (id, pwd, user_name) => {
 };
 
 const loginCheckFB = () => {
-  return function (dispatch, getState, { history }) {
+  return function (dispatch, getState, {history}){
     auth.onAuthStateChanged((user) => {
-      if (user) {
+      if(user){
         dispatch(
           setUser({
             user_name: user.displayName,
@@ -103,21 +103,21 @@ const loginCheckFB = () => {
             uid: user.uid,
           })
         );
-      } else {
+      }else{
         dispatch(logOut());
       }
-    });
-  };
-};
+    })
+  }
+}
 
 const logoutFB = () => {
-  return function (dispatch, getState, { history }) {
+  return function (dispatch, getState, {history}) {
     auth.signOut().then(() => {
       dispatch(logOut());
-      history.replace("/");
-    });
-  };
-};
+      history.replace('/');
+    })
+  }
+}
 
 // reducer
 export default handleActions(

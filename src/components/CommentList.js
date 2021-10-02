@@ -41,6 +41,6 @@ CommentItem.defaultProps = {
     user_name: "minguk",
     user_id: "",
     post_id: 1,
-    contents: "갸우뚱??",
+    contents: "갸우뚱??..응?",
     insert_dt: '2021-01-01 19:00:00'
 }
