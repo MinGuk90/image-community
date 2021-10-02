@@ -2,33 +2,27 @@ import styled from "styled-components";
 import React from "react";
 
 const Image = (props) => {
-  const {shape, src, size} = props;
+  const { shape, src, size } = props;
 
   const styles = {
     src: src,
     size: size,
+  };
+
+  if (shape === "circle") {
+    return <ImageCircle {...styles}></ImageCircle>;
   }
 
-  if(shape === "circle"){
-    return (
-      <ImageCircle {...styles}></ImageCircle>
-    )
-  }
-
-  if(shape === "rectangle"){
+  if (shape === "rectangle") {
     return (
       <AspectOutter>
         <AspectInner {...styles}></AspectInner>
       </AspectOutter>
-    )
+    );
   }
 
-  return (
-    <React.Fragment>
-
-    </React.Fragment>
-  )
-}
+  return <React.Fragment></React.Fragment>;
+};
 
 Image.defaultProps = {
   shape: "circle",
