@@ -14,7 +14,18 @@ const Upload = (props) => {
     console.log(e.target);
     console.log(e.target.files[0]);
 
-    console.log(fileInput.current.files[0]);
+    const reader = new FileReader();
+    const file = e.target.files[0];
+
+    // 파일 내용을 읽어옵니다.
+    reader.readAsDataURL(file);
+
+    // 읽기가 끝나면 발생하는 이벤트 핸들러예요! :)
+    reader.onloadend = () => {
+      // reader.result는 파일의 컨텐츠(내용물)입니다!
+      console.log(reader.result);
+      dispatch(imageActions.setPreview(reader.result));
+    };
   };
 
   const uploadFB = () => {

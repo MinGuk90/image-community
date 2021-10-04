@@ -3,7 +3,6 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyAY6toOkjjcPja_iiG1kklErobvFv_QMtM",
   authDomain: "image-community-97660.firebaseapp.com",
@@ -11,9 +10,8 @@ const firebaseConfig = {
   storageBucket: "image-community-97660.appspot.com",
   messagingSenderId: "157954951536",
   appId: "1:157954951536:web:4801ddc0d3eb905e3627b5",
-  measurementId: "G-GXVEENQTPT"
+  measurementId: "G-GXVEENQTPT",
 };
-
 firebase.initializeApp(firebaseConfig);
 
 const apiKey = firebaseConfig.apiKey;
@@ -21,4 +19,4 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const storage = firebase.storage();
 
-export{auth, apiKey, firestore, storage};
+export { auth, apiKey, firestore, storage };
