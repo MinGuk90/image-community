@@ -4,7 +4,7 @@ import "firebase/firestore";
 import "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAY6toOkjjcPja_iiG1kklErobvFv_QMtM",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "image-community-97660.firebaseapp.com",
   projectId: "image-community-97660",
   storageBucket: "image-community-97660.appspot.com",
